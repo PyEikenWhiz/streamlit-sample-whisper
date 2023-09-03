@@ -60,4 +60,4 @@ if url:
     comment.write("文字起こしを開始します")
     comment.write(url)
     transcribe_youtube(url)
-    comment.write("文字起こしが完了しました!")
+    comment.write("文字起こしが完了しました!!")
