@@ -37,7 +37,8 @@ def transcribe_youtube(url):
     model_size = "large-v2"
 
     # Run on GPU with FP16
-    model = WhisperModel(model_size, device="cuda", compute_type="float16")
+    #model = WhisperModel(model_size, device="cuda", compute_type="float16")
+    model = WhisperModel(model_size, device="cpu")
     segments, _ = model.transcribe("audio.mp3",initial_prompt=video_summary)
     segments = list(segments)  # The transcription will actually run here.
 
