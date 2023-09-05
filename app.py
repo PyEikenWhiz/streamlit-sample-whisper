@@ -16,6 +16,7 @@ def transcribe_youtube(url):
         ydl.download([video_url])
 
     st.write("音声の再生")
+    st.write(video_url)
     st.audio("audio.mp3", format="mp3")
 
     # Fetch YouTube video information
@@ -31,7 +32,7 @@ def transcribe_youtube(url):
 
     # Print the video summary
     st.write("Youtube情報を表示します")
-    st.write(video_summary)
+    #st.write(video_summary)
     #print(video_summary)
 
     #model_size = "large-v2"
@@ -61,6 +62,7 @@ url = st.text_input(label = 'YoutubeのURLを入力', value= "https://www.youtub
 if st.button("文字起こし"):
     comment = st.empty()
     comment.write("文字起こしを開始します")
-    comment.write(url)
+    comment.write("文字起こしを開始します")
+    #comment.write(url)
     transcribe_youtube(url)
     comment.write("文字起こしが完了しました!!")
