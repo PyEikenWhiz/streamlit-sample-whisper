@@ -4,7 +4,7 @@ from faster_whisper import WhisperModel
 import streamlit as st
 
 def transcribe_youtube(url):
-    st.write(url)
+    #st.write(url)
     video_url = url
 
     # Download the video audio as an MP3 file
@@ -58,9 +58,9 @@ st.write("URLを入力してください。文字起こしします。")
 #url = st.text_input('YoutubeのURLを入力',"https://www.youtube.com/shorts/ACuXn0EQfS0")
 url = st.text_input(label = 'YoutubeのURLを入力', value= "https://www.youtube.com/shorts/ACuXn0EQfS0")
 
-if url:
+if st.button("文字起こし"):
     comment = st.empty()
     comment.write("文字起こしを開始します")
-    comment.write(url)
+    comment.write("URL: ", url)
     transcribe_youtube(url)
     comment.write("文字起こしが完了しました!!")
