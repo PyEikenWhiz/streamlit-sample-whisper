@@ -18,7 +18,8 @@ def transcribe_youtube(url):
 
     st.write("音声の再生")
     st.write(video_url)
-    st.audio("audio.mp3", format="mp3")
+    #st.audio("audio.mp3", format="mp3")
+    st.audio("audio.mp3", format="audio/mp3", volume=0.5)
 
     # Fetch YouTube video information
     video_info = yt_dlp.YoutubeDL().extract_info(video_url, download=False)
@@ -60,8 +61,7 @@ st.title("文字起こしアプリ")
 st.header("概要")
 st.write("URLを入力してください。文字起こしします。")
 #url = st.text_input('YoutubeのURLを入力',"https://www.youtube.com/shorts/ACuXn0EQfS0")
-#url = st.text_input(label = 'YoutubeのURLを入力', value= "https://www.youtube.com/shorts/ACuXn0EQfS0")
-url = st.text_input(label = 'YoutubeのURLを入力')
+url = st.text_input(label = 'YoutubeのURLを入力', value= "https://www.youtube.com/shorts/ACuXn0EQfS0")
 
 if st.button("文字起こし"):
     comment = st.empty()
