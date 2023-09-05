@@ -38,7 +38,6 @@ def transcribe_youtube(url):
     #model_size = "large-v2"
     model_size = "small"
 
-
     # Run on GPU with FP16
     #model = WhisperModel(model_size, device="cuda", compute_type="float16")
     model = WhisperModel(model_size, device="cpu")
@@ -57,13 +56,13 @@ st.title("文字起こしアプリ")
 st.header("概要")
 st.write("URLを入力してください。文字起こしします。")
 #url = st.text_input('YoutubeのURLを入力',"https://www.youtube.com/shorts/ACuXn0EQfS0")
-url = st.text_input(label = 'YoutubeのURLを入力', value= "https://www.youtube.com/shorts/ACuXn0EQfS0")
+#url = st.text_input(label = 'YoutubeのURLを入力', value= "https://www.youtube.com/shorts/ACuXn0EQfS0")
+url = st.text_input(label = 'YoutubeのURLを入力')
 
 if st.button("文字起こし"):
     comment = st.empty()
     comment.write("")
     comment.write("文字起こしを開始します")
     #comment.write(url)
-    transcribe_youtube(url)
     transcribe_youtube(url)
     comment.write("文字起こしが完了しました!!")
