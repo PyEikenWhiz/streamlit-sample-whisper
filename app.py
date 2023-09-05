@@ -61,6 +61,6 @@ url = st.text_input(label = 'YoutubeのURLを入力', value= "https://www.youtub
 if st.button("文字起こし"):
     comment = st.empty()
     comment.write("文字起こしを開始します")
-    comment.write('URL: ', url)
+    comment.write(url)
     transcribe_youtube(url)
     comment.write("文字起こしが完了しました!!")
