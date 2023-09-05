@@ -2,6 +2,7 @@
 import yt_dlp
 from faster_whisper import WhisperModel
 import streamlit as st
+import os
 
 def transcribe_youtube(url):
     #st.write(url)
@@ -52,6 +53,9 @@ def transcribe_youtube(url):
     st.write("文字起こしを表示します")
     st.write(connected_text)
 
+    # Delete the audio file after downloading
+    os.remove("audio.mp3")  # Remove the file
+
 st.title("文字起こしアプリ")
 st.header("概要")
 st.write("URLを入力してください。文字起こしします。")
@@ -61,7 +65,7 @@ url = st.text_input(label = 'YoutubeのURLを入力')
 
 if st.button("文字起こし"):
     comment = st.empty()
-    comment.write("")
+    #comment.write("")
     comment.write("文字起こしを開始します")
     #comment.write(url)
     transcribe_youtube(url)
