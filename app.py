@@ -36,8 +36,8 @@ def transcribe_youtube(url):
     #st.write(video_summary)
     #print(video_summary)
 
-    model_size = "large-v2"
-    #model_size = "small"
+    #model_size = "large-v2"
+    model_size = "small"
 
     # Run on GPU with FP16
     #model = WhisperModel(model_size, device="cuda", compute_type="float16")
