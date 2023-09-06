@@ -18,8 +18,7 @@ def transcribe_youtube(url):
 
     st.write("音声の再生")
     st.write(video_url)
-    #st.audio("audio.mp3", format="mp3")
-    st.audio("audio.mp3", format="audio/mp3", volume=0.5)
+    st.audio("audio.mp3", format="mp3")
 
     # Fetch YouTube video information
     video_info = yt_dlp.YoutubeDL().extract_info(video_url, download=False)
