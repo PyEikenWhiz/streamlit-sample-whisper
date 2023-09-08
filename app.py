@@ -16,8 +16,8 @@ def transcribe_youtube(url):
 #    st.write("音声再生: " + url)
 #    st.audio("audio.mp3", format="mp3")
 
-    model_size = "large-v2"
-    #model_size = "small"
+    #model_size = "large-v2"
+    model_size = "small"
 
     # Run on GPU with FP16
     #model = WhisperModel(model_size, device="cuda", compute_type="float16")
